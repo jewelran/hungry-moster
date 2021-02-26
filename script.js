@@ -6,7 +6,7 @@ document.getElementById("search_btn").addEventListener("click", function () {
     .then((data) => {
       if (data.meals === null || data.meals === undefined) {
         const error = document.getElementById("error-massege");
-        error.innerHTML = ` ${inputValue} not found, plz try agin!`;
+        error.innerHTML = ` ${inputValue} not found, plz try again!`;
       } else {
         item.innerHTML = data.meals.map(
           (
@@ -34,6 +34,7 @@ const foodDetails = (foodName) => {
       foodDetail.innerHTML = `
        <img src = '${data.meals[0].strMealThumb}' alt = 'img'/>
         <h2>${data.meals[0].strMeal}</h2>
+        </br>
         <li>${data.meals[0].strIngredient1}</li>
         <li>${data.meals[0].strIngredient2}</li>
         <li>${data.meals[0].strIngredient3}</li>
